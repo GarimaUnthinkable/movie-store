@@ -264,4 +264,15 @@ export class ApiService {
       { media_id, media_type, watchlist }
     );
   }
+
+  create_list(session: any, name: any, description: any, language: any) {
+    return this.http.post(
+      `https://api.themoviedb.org/3/list?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`,
+      {
+        name,
+        description,
+        language,
+      }
+    );
+  }
 }

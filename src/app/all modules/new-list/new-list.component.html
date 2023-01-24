@@ -1,0 +1,66 @@
+<div style="margin: 30px">
+  <h4 style="margin-top: 30px">Create a new list</h4>
+
+  <p>There are very simple two steps to create a new list.</p>
+  <p><b>Step 1:</b> Give a name to the list you want.</p>
+
+  <p>
+    <b>Step 2:</b> After naming, give some description about your list that what
+    type of movies and shows are stored in the list.
+  </p>
+</div>
+<div style="margin: 30px">
+  <form (submit)="onSubmit()" style="width: 100%">
+    <label mat-label style="font-size: 20px">Name</label>
+    <input
+      type="text"
+      [(ngModel)]="name"
+      name="name"
+      class="form-control me-2"
+      style="
+        border-radius: 5px;
+        width: 100%;
+        height: 45px;
+        border-color: lightgray;
+      "
+    />
+    <div style="color: red" *ngIf="name == null">
+      *Either the field is required or not valid.
+    </div>
+  </form>
+
+  <form style="width: 100%; margin-top: 20px" (submit)="onSubmit()">
+    <label mat-label style="font-size: 20px">Description</label>
+    <input
+      [(ngModel)]="description"
+      name="description"
+      class="form-control me-2"
+      type="text"
+      style="
+        border-radius: 5px;
+        width: 100%;
+        height: 45px;
+        border-color: lightgray;
+      "
+    />
+    <div style="color: red" *ngIf="description == null">
+      *Either the field is required or not valid.
+    </div>
+  </form>
+</div>
+<div style="margin: 50px">
+  <button
+    [disabled]="name == undefined || description == undefined"
+    (click)="onSubmit()"
+    mat-raised-button
+    style="
+      background-color: rgb(27, 178, 238);
+      color: white;
+      width: 85px;
+      height: 40px;
+      padding-top: 6px;
+    "
+  >
+    <h6>Create</h6>
+  </button>
+</div>

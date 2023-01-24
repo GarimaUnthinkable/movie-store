@@ -12,6 +12,8 @@ import { MovieInfoComponent } from './all modules/movie-info/movie-info.componen
 import { MediaComponent } from './all modules/media/media.component';
 import { LoginGuard } from './all modules/login/login.guard';
 import { AccountGuard } from './all modules/account-details/account.guard';
+import { ListInfoComponent } from './all modules/list-info/list-info.component';
+import { NewListComponent } from './all modules/new-list/new-list.component';
 
 let routes: Routes = [
   { path: '', component: MoviesComponent },
@@ -33,6 +35,8 @@ let routes: Routes = [
         '../app/all modules/account-details/account-details-routing.module'
       ).then((m) => m.AccountDetailsRoutingModule),
   },
+  { path: 'list-info', component: ListInfoComponent },
+  { path: 'new-list', component: NewListComponent },
 ];
 
 @NgModule({
