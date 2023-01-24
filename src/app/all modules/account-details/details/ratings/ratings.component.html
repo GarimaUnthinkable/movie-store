@@ -1,0 +1,72 @@
+<div style="margin: 40px">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4><b>Ratings</b></h4>
+    </div>
+    <div style="margin: 20px">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card" style="width: 600px; margin-bottom: 20px">
+            <div class="card bg-light text-white">
+              <img
+                class="card-img"
+                src="https://img.freepik.com/free-vector/film-reel-strip-with-stars-cinema-background_1017-23462.jpg?w=2000"
+                alt="Image"
+                style="height: 300px; opacity: 0.7"
+              />
+              <div
+                class="card-img-overlay"
+                routerLink="/account-details/movie-ratings"
+              >
+                <h1
+                  class="card-title"
+                  style="margin-left: 200px; margin-top: 80px; color: black"
+                >
+                  <b>Movies</b>
+                </h1>
+                <p
+                  class="card-text"
+                  style="margin-left: 220px; margin-top: 20px; color: black"
+                >
+                  <b>Total items: {{ movies.total_results }}</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div
+            class="card"
+            style="height: 50px; width: 600px; margin-bottom: 20px"
+          >
+            <div class="card bg-light text-white">
+              <img
+                class="card-img"
+                src="https://img.freepik.com/free-vector/film-reel-strip-with-stars-cinema-background_1017-23462.jpg?w=2000"
+                alt="Image"
+                style="height: 300px; opacity: 0.7"
+              />
+              <div
+                class="card-img-overlay"
+                routerLink="/account-details/tv-ratings"
+              >
+                <h1
+                  class="card-title"
+                  style="margin-left: 200px; margin-top: 80px; color: black"
+                >
+                  <b>TV Shows</b>
+                </h1>
+                <p
+                  class="card-text"
+                  style="margin-left: 250px; margin-top: 20px; color: black"
+                >
+                  <b>Total items: {{ shows.total_results }}</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

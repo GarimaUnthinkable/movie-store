@@ -1,0 +1,53 @@
+<div class="row">
+  <h3 style="margin: 20px">All Casts & Crews</h3>
+  <div class="column left">
+    <div style="display: inline-block; margin: 30px">
+      <h3>Casts</h3>
+      <div
+        class="container"
+        *ngFor="let cast of casts"
+        style="margin-left: 10px"
+      >
+        <div class="card-border-light" style="width: 18rem; margin-top: 10px">
+          <a (click)="getPeopleDetails(cast.id)" routerLink="/people-details">
+            <img
+              class="card-img-top"
+              src="https://image.tmdb.org/t/p/w500{{ cast.profile_path }}"
+              alt="Cast's image"
+              style="height: 200px; width: 150px; border-radius: 5px"
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">{{ cast.name }}</h5>
+            <p class="card-text"><b>Character:</b>{{ cast.character }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column right">
+    <div style="display: inline-block; margin-left: 500px; margin-top: 30px">
+      <h3>Crews</h3>
+      <div
+        class="container"
+        *ngFor="let crew of crews"
+        style="margin-left: 10px"
+      >
+        <div class="card-border-light" style="width: 18rem; margin-top: 20px">
+          <a (click)="getPeopleDetails(crew.id)" routerLink="/people-details">
+            <img
+              class="card-img-top"
+              src="https://image.tmdb.org/t/p/w500{{ crew.profile_path }}"
+              alt="Cast's image"
+              style="height: 200px; width: 150px; border-radius: 5px"
+          /></a>
+          <div class="card-body">
+            <h5 class="card-title">{{ crew.name }}</h5>
+            <p class="card-text"><b>Job:</b>{{ crew.job }}</p>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

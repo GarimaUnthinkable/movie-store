@@ -1,0 +1,36 @@
+<div class="container">
+  <h4>Delete Account</h4>
+  <p>
+    You've just entered the <span style="color: red">danger zone!</span> If you
+    would like to continue and remove your account, you can do so by entering
+    your password below and confirming the prompts.
+  </p>
+  <form>
+    <label for="password" style="font-size: 20px; color: rgb(41, 39, 39)"
+      >Password</label
+    ><br /><input
+      name="password"
+      [(ngModel)]="password"
+      class="form-control me-2"
+      matInput
+      type="password"
+      placeholder="Enter your current password to continue..."
+      style="width: 100%; height: 40px; border-color: black; border-radius: 5px"
+    />
+  </form>
+  <p style="color: red" *ngIf="deleted == true">
+    *The password entered is wrong.
+  </p>
+  <button
+    *ngIf="password != null"
+    mat-raised-button
+    (click)="delete()"
+    style="
+      background-color: rgb(72, 90, 209);
+      border-radius: 20px;
+      margin-top: 30px;
+    "
+  >
+    <b style="color: white">Continue</b>
+  </button>
+</div>

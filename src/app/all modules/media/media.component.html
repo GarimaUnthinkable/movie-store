@@ -1,0 +1,14 @@
+<h3 style="margin: 20px">All media</h3>
+
+<div
+  class="d-flex card-deck"
+  style="overflow: auto; white-space: nowrap"
+  *ngFor="let video of videos"
+>
+  <div class="card-border-light" style="margin: 15px">
+    <h6><b>Name:</b> {{ video.name }}</h6>
+
+    <p><b>Video Type:</b> {{ video.type }}</p>
+    <youtube-player videoId="{{ video.key }}"> </youtube-player><br />
+  </div>
+</div>

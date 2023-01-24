@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  width: 75%;
+}
+
+.column {
+  flex: left;
+}
+
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+}

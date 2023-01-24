@@ -1,0 +1,67 @@
+<nav
+  style="
+    height: 250px;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210204/pngtree-abstract-background-technology-of-data-applications-image_555017.jpg');
+  "
+>
+  <div>
+    <img
+      src="{{ avatar }}"
+      alt="avatar"
+      style="width: 180px; height: 180px; border-radius: 200px; margin: 30px"
+    />
+    <span
+      style="margin: 5px; color: white; font-size: 70px"
+      routerLink="/account-details"
+    >
+      <b>{{ username }}</b>
+    </span>
+  </div>
+</nav>
+
+<div class="container">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/account-details"
+        style="margin-left: 200px"
+        routerLink="/account-details/favourites"
+        ><b>Favourites</b></a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/account-details/lists"
+        style="margin-left: 50px"
+        ><b>Lists</b></a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/account-details/ratings"
+        style="margin-left: 50px"
+        ><b>Ratings</b></a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/account-details/watchlist"
+        style="margin-left: 50px"
+        ><b>Watchlist</b></a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/account-details/delete-account"
+        style="color: red; margin-left: 50px"
+        ><b>Logout</b></a
+      >
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>

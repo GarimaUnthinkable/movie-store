@@ -1,0 +1,31 @@
+<div style="margin: 40px">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4><b>My Favourite Movies</b></h4>
+    </div>
+  </div>
+</div>
+<div class="card" *ngFor="let detail of movies" style="margin: 15px">
+  <div class="row no-gutters">
+    <div class="col-auto">
+      <a (click)="getId(detail.id, detail.video)" routerLink="/details">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ detail.poster_path }}"
+          class="img-fluid"
+          alt="Poster"
+          style="width: 150px; height: 250px; border-radius: 5px"
+      /></a>
+    </div>
+    <div class="col">
+      <div class="card-block px-2">
+        <h4 class="card-title">{{ detail.title }}{{ detail.name }}</h4>
+        <p class="card-text text">
+          {{ detail.overview }}{{ movies.popularity }}
+        </p>
+        <p class="text-muted">
+          {{ detail.release_date }}{{ detail.first_air_date }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

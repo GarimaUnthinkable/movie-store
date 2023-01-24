@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div class="card-border-light" style="margin: 20px; width: 300px">
+      <div class="card-body" style="width: 300px">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ person_data.profile_path }}"
+          alt="Picture of actor"
+          style="width: 250px; height: 300px; border-radius: 10px"
+        />
+        <h5
+          style="margin-top: 30px"
+          *ngIf="person_data.also_known_as != 0"
+        >
+          Also known as
+        </h5>
+        <ul>
+          <li *ngFor="let name of person_data.also_known_as">{{ name }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="card-border-light" style="margin: 20px">
+      <div class="card-body">
+        <h1>
+          <b>{{ person_data.name }}</b>
+        </h1>
+        <h6 class="text-muted" *ngIf="person_data.birthday != null">
+          Birth date: <span>{{ person_data.birthday }}</span>
+        </h6>
+
+        <h5 *ngIf="person_data.place_of_birth != null">
+          Birth place: <span>{{ person_data.place_of_birth }}</span>
+        </h5>
+        <br />
+        <h4 class="card-title" *ngIf="person_data.biography != ''">
+          Biography
+        </h4>
+        <p class="card-text">{{ person_data.biography }}</p>
+        <br />
+        <h5 *ngIf="person_data.known_for_department != null">Department</h5>
+        <h6>{{ person_data.known_for_department }}</h6>
+      </div>
+    </div>
+  </div>
+</div>

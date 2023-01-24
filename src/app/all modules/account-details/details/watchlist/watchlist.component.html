@@ -1,0 +1,72 @@
+<div style="margin: 40px">
+  <div class="row">
+    <div class="col-sm-6">
+      <h4><b>My Watchlist</b></h4>
+    </div>
+    <div style="margin: 20px">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card" style="width: 600px; margin-bottom: 20px">
+            <div class="card bg-light text-white">
+              <img
+                class="card-img"
+                src="https://png.pngtree.com/thumb_back/fw800/back_pic/03/63/88/7657ac89ca6b2dc.jpg"
+                alt="Image"
+                style="height: 300px; opacity: 0.7"
+              />
+              <div
+                class="card-img-overlay"
+                routerLink="/account-details/movie-watch"
+              >
+                <h1
+                  class="card-title"
+                  style="margin-left: 200px; margin-top: 80px; color: black"
+                >
+                  <b>Movies</b>
+                </h1>
+                <p
+                  class="card-text"
+                  style="margin-left: 220px; margin-top: 20px; color: black"
+                >
+                  <b>Total items: {{ movies.total_results }}</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div
+            class="card"
+            style="height: 50px; width: 600px; margin-bottom: 20px"
+          >
+            <div class="card bg-light text-white">
+              <img
+                class="card-img"
+                src="https://png.pngtree.com/thumb_back/fw800/back_pic/03/63/88/7657ac89ca6b2dc.jpg"
+                alt="Image"
+                style="height: 300px; opacity: 0.7"
+              />
+              <div
+                class="card-img-overlay"
+                routerLink="/account-details/tv-watch"
+              >
+                <h1
+                  class="card-title"
+                  style="margin-left: 200px; margin-top: 80px; color: black"
+                >
+                  <b>TV Shows</b>
+                </h1>
+                <p
+                  class="card-text"
+                  style="margin-left: 250px; margin-top: 20px; color: black"
+                >
+                  <b>Total items: {{ shows.total_results }}</b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

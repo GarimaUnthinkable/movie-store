@@ -1,0 +1,133 @@
+<nav style="background-color: black; height: 60px">
+  <a class="navbar-brand" routerLink="/movies">
+    <img
+      src="https://as1.ftcdn.net/v2/jpg/04/00/47/88/1000_F_400478854_eAL87XQTJyakxh1XSadIxSojtBjm7z8b.jpg"
+      width="90"
+      height="60"
+      class="d-inline-block align-top"
+      alt=""
+    />
+    <span style="color: white; font-size: 35px"><b>Movie Store</b></span>
+  </a>
+  <div class="dropdown">
+    <h6 style="color: white"><b>Movies</b></h6>
+    <div class="dropdown-content">
+      <button
+        mat-raised-button
+        style="background-color: white; color: black"
+        routerLink="movie-menu"
+        [queryParams]="{ type: 'popular' }"
+      >
+        Popular</button
+      ><br />
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/movie-menu"
+        [queryParams]="{ type: 'now_playing' }"
+      >
+        Now Playing</button
+      ><br />
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/movie-menu"
+        [queryParams]="{ type: 'top_rated' }"
+      >
+        Top Rated</button
+      ><br />
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/movie-menu"
+        [queryParams]="{ type: 'upcoming' }"
+      >
+        Upcoming
+      </button>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <h6 style="color: white"><b>TV Shows</b></h6>
+    <div class="dropdown-content">
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/tv-menu"
+        [queryParams]="{ type: 'popular' }"
+      >
+        Popular</button
+      ><br />
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/tv-menu"
+        [queryParams]="{ type: 'airing_today' }"
+      >
+        Airing Today</button
+      ><br />
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/tv-menu"
+        [queryParams]="{ type: 'on_the_air' }"
+      >
+        On TV</button
+      ><br />
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/tv-menu"
+        [queryParams]="{ type: 'top_rated' }"
+      >
+        Top Rated
+      </button>
+    </div>
+  </div>
+  <div class="dropdown">
+    <h6 style="color: white"><b>People</b></h6>
+    <div class="dropdown-content">
+      <button
+        mat-button
+        style="background-color: white; color: black"
+        routerLink="/people"
+      >
+        Popular People
+      </button>
+    </div>
+  </div>
+
+  <button
+    mat-raised-button
+    *ngIf="session == null"
+    style="margin-left: 550px; background-color: black"
+    routerLink="/login"
+  >
+    <b>Login</b>
+  </button>
+  <a href="https://www.themoviedb.org/signup" target="_blank">
+    <button
+      *ngIf="session == null"
+      mat-raised-button
+      style="margin-left: 20px; background-color: black"
+    >
+      <b>Join movie store</b>
+    </button></a
+  >
+
+  <button
+    mat-raised-button
+    style="background-color: black; color: white; margin-left: 650px"
+    routerLink="/account-details"
+    *ngIf="session != null"
+  >
+    <b>My Profile</b
+    ><span
+      class="material-icons"
+      style="margin-left: 2px; margin-top: 10px; width: 40px; height: 38px"
+    >
+      account_circle
+    </span>
+  </button>
+</nav>
+<router-outlet></router-outlet>

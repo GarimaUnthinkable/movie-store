@@ -1,0 +1,35 @@
+<div class="row row-cols-1 row-cols-md-6" style="width: 99%">
+  <div class="col mb-4" *ngFor="let person of people">
+    <div class="card-border-light" style="margin: 10px">
+      <a (click)="getId(person.id)" routerLink="/person-details"
+        ><img
+          src="https://image.tmdb.org/t/p/w500{{ person.profile_path }}"
+          class="card-img-top"
+          alt="..."
+          style="border-radius: 10px; margin: 10px"
+      /></a>
+      <div class="card-body">
+        <h5 class="card-title" style="white-space: normal">
+          {{ person.name }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button
+  class="btn btn-info btn-lg"
+  style="margin: 10px; width: 40%; float: left"
+  *ngIf="page != 1"
+  (click)="prePage()"
+>
+  Previous Page
+</button>
+
+<button
+  class="btn btn-info btn-lg"
+  style="margin: 10px; width: 40%; float: right"
+  (click)="loadMore()"
+>
+  Next Page
+</button>

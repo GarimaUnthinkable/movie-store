@@ -1,0 +1,89 @@
+<div style="margin: 30px">
+  <h4 style="margin-top: 30px">Login to your account</h4>
+
+  <p>
+    In order to use the editing and rating capabilities, as well as get personal
+    recommendations you will need to login to your account. If you do not have
+    an account, registering for an account is free and simple.
+    <a
+      href="https://www.themoviedb.org/signup"
+      target="_blank"
+      style="color: blue"
+      ><u>Click here</u></a
+    >
+    to get started.
+  </p>
+
+  <p>
+    If you signed up but didn't get your verification email,
+    <a
+      target="_blank"
+      href="https://www.themoviedb.org/resend-email-verification"
+      style="color: blue"
+      ><u>click here</u></a
+    >
+    to have it resent.
+  </p>
+</div>
+
+<div style="margin: 30px">
+  <form (submit)="onSubmit()" style="width: 100%">
+    <label mat-label style="font-size: 20px">Username</label>
+    <input
+      type="text"
+      [(ngModel)]="username"
+      name="username"
+      class="form-control me-2"
+      style="
+        border-radius: 5px;
+        width: 100%;
+        height: 45px;
+        border-color: lightgray;
+      "
+    />
+    <div style="color: red" *ngIf="username == null">
+      *Either the field is required or not valid.
+    </div>
+  </form>
+
+  <form style="width: 100%; margin-top: 20px" (submit)="onSubmit()">
+    <label mat-label style="font-size: 20px">Password</label>
+    <input
+      [(ngModel)]="password"
+      name="password"
+      class="form-control me-2"
+      type="password"
+      style="
+        border-radius: 5px;
+        width: 100%;
+        height: 45px;
+        border-color: lightgray;
+      "
+    />
+    <div style="color: red" *ngIf="password == null">
+      *Either the field is required or not valid.
+    </div>
+  </form>
+</div>
+<div style="margin: 50px">
+  <button
+    [disabled]="username == null || password == null"
+    (click)="onSubmit()"
+    mat-raised-button
+    style="
+      background-color: rgb(27, 178, 238);
+      color: white;
+      width: 85px;
+      height: 40px;
+      padding-top: 6px;
+    "
+  >
+    <h6>Login</h6>
+  </button>
+  <a
+    target="_blank"
+    href="https://www.themoviedb.org/reset-password"
+    style="color: rgb(27, 178, 238); font-size: 20px; margin-left: 15px"
+    ><u>Reset password</u></a
+  >
+</div>
