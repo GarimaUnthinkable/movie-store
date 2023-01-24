@@ -23,9 +23,7 @@ export class TvRatingsComponent implements OnInit {
 
   getData() {
     this.api.tv_ratings(this.session_id).subscribe((res: any) => {
-      console.log(res);
       this.movies = res.results;
-      // console.log(this.movies);
     });
   }
 

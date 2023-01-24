@@ -23,7 +23,6 @@ export class TvWatchComponent implements OnInit {
 
   getData() {
     this.api.tv_watchlist(this.session_id).subscribe((res: any) => {
-      console.log(res);
       this.shows = res.results;
     });
   }

@@ -20,7 +20,6 @@ export class LogoutComponent implements OnInit {
 
   delete() {
     if (this.password == this.user_pass) {
-      console.log(this.user_pass);
       this.session_id = localStorage.removeItem('session_id');
       this.user_pass = localStorage.removeItem('user_pass');
       this.account = localStorage.removeItem('account_id');

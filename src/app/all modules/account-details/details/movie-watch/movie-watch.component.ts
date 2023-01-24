@@ -23,7 +23,6 @@ export class MovieWatchComponent implements OnInit {
 
   getData() {
     this.api.movie_watchlist(this.session_id).subscribe((res: any) => {
-      console.log(res);
       this.movies = res.results;
     });
   }

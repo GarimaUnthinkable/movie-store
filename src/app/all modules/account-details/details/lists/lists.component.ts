@@ -18,7 +18,6 @@ export class ListsComponent implements OnInit {
 
   lists() {
     this.api.lists(this.session_id).subscribe((res: any) => {
-      console.log(res);
       this.number_of_lists = res.results;
     });
   }

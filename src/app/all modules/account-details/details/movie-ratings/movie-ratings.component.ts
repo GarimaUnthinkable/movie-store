@@ -23,9 +23,7 @@ export class MovieRatingsComponent implements OnInit {
 
   getData() {
     this.api.movie_ratings(this.session_id).subscribe((res: any) => {
-      console.log(res);
       this.movies = res.results;
-      // console.log(this.movies);
     });
   }
 

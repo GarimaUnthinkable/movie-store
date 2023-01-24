@@ -138,7 +138,6 @@ export class MovieDetailsComponent implements OnInit {
         this.id = res.id;
         if (res.video === 'false') {
           this.movieData();
-          console.log(this.data);
           this.api
             .add_favourite(
               this.account_id,
@@ -148,12 +147,9 @@ export class MovieDetailsComponent implements OnInit {
 
               true
             )
-            .subscribe((res: any) => {
-              console.log(res);
-            });
+            .subscribe((res: any) => {});
         } else {
           this.tvData();
-          console.log(this.data);
           this.api
             .add_favourite(
               this.account_id,
@@ -162,9 +158,7 @@ export class MovieDetailsComponent implements OnInit {
               'tv',
               true
             )
-            .subscribe((res: any) => {
-              console.log(res);
-            });
+            .subscribe((res: any) => {});
         }
       });
     }
@@ -176,7 +170,6 @@ export class MovieDetailsComponent implements OnInit {
         this.id = res.id;
         if (res.video === 'false') {
           this.movieData();
-          console.log(this.data);
           this.api
             .add_watchlist(
               this.account_id,
@@ -186,12 +179,9 @@ export class MovieDetailsComponent implements OnInit {
 
               true
             )
-            .subscribe((res: any) => {
-              console.log(res);
-            });
+            .subscribe((res: any) => {});
         } else {
           this.tvData();
-          console.log(this.data);
           this.api
             .add_watchlist(
               this.account_id,
@@ -200,9 +190,7 @@ export class MovieDetailsComponent implements OnInit {
               'tv',
               true
             )
-            .subscribe((res: any) => {
-              console.log(res);
-            });
+            .subscribe((res: any) => {});
         }
       });
     }
