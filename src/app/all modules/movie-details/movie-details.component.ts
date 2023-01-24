@@ -161,6 +161,33 @@ export class MovieDetailsComponent implements OnInit {
             .subscribe((res: any) => {});
         }
       });
+    } else {
+      this.route.queryParams.subscribe((res: any) => {
+        this.id = res.id;
+        if (res.video === 'false') {
+          this.movieData();
+          this.api
+            .add_favourite(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'movie',
+              false
+            )
+            .subscribe((res: any) => {});
+        } else {
+          this.tvData();
+          this.api
+            .add_favourite(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'tv',
+              false
+            )
+            .subscribe((res: any) => {});
+        }
+      });
     }
   }
 
@@ -189,6 +216,33 @@ export class MovieDetailsComponent implements OnInit {
               this.data.id,
               'tv',
               true
+            )
+            .subscribe((res: any) => {});
+        }
+      });
+    } else {
+      this.route.queryParams.subscribe((res: any) => {
+        this.id = res.id;
+        if (res.video === 'false') {
+          this.movieData();
+          this.api
+            .add_watchlist(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'movie',
+              false
+            )
+            .subscribe((res: any) => {});
+        } else {
+          this.tvData();
+          this.api
+            .add_watchlist(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'tv',
+              false
             )
             .subscribe((res: any) => {});
         }
