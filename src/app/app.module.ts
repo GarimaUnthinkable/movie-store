@@ -23,8 +23,6 @@ import { ListsComponent } from './all modules/account-details/details/lists/list
 import { RatingsComponent } from './all modules/account-details/details/ratings/ratings.component';
 import { WatchlistComponent } from './all modules/account-details/details/watchlist/watchlist.component';
 import { LogoutComponent } from './all modules/account-details/details/logout/logout.component';
-import { NewListComponent } from './all modules/new-list/new-list.component';
-import { ListInfoComponent } from './all modules/list-info/list-info.component';
 import { FavouritesComponent } from './all modules/account-details/details/favourites/favourites.component';
 import { FavouriteMoviesComponent } from './all modules/account-details/details/favourite-movies/favourite-movies.component';
 import { FavouriteShowsComponent } from './all modules/account-details/details/favourite-shows/favourite-shows.component';
@@ -51,8 +49,6 @@ import { TvWatchComponent } from './all modules/account-details/details/tv-watch
     RatingsComponent,
     WatchlistComponent,
     LogoutComponent,
-    NewListComponent,
-    ListInfoComponent,
     FavouritesComponent,
     FavouriteMoviesComponent,
     FavouriteShowsComponent,
