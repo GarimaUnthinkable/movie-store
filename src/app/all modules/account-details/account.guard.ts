@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class AccountGuard implements CanActivate {
   constructor(public router: Router) {}
-  session_id: any = JSON.parse(localStorage.getItem('session_details')!);
+  session_id: any = localStorage.getItem('session_id');
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

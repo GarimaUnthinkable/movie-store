@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
             this.api.session(this.request_token).subscribe((session: any) => {
               this.router.navigate(['/movies']).then;
               location.reload();
-              let stringify = JSON.stringify(session);
-              localStorage.setItem('session_details', stringify);
-              console.log(JSON.parse(stringify), 'session details');
+              let stringify = session.session_id;
+              localStorage.setItem('session_id', stringify);
+              console.log(JSON.parse(stringify), 'session_id');
             });
           }
         });

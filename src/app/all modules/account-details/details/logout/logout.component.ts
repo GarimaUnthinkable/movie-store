@@ -8,9 +8,9 @@ import { ApiService } from 'src/app/all modules/others/api.service';
   styleUrls: ['./logout.component.css'],
 })
 export class LogoutComponent implements OnInit {
-  session_details: any = JSON.parse(localStorage.getItem('session_details')!);
-  session_id: any = this.session_details.session_id;
+  session_id: any = localStorage.getItem('session_id');
   user_pass: any = localStorage.getItem('user_pass');
+  account: any = localStorage.getItem('account_id');
   password: any;
   deleted = false;
 
@@ -21,8 +21,9 @@ export class LogoutComponent implements OnInit {
   delete() {
     if (this.password == this.user_pass) {
       console.log(this.user_pass);
-      this.session_details = localStorage.removeItem('session_details');
+      this.session_id = localStorage.removeItem('session_id');
       this.user_pass = localStorage.removeItem('user_pass');
+      this.account = localStorage.removeItem('account_id');
       this.route.navigate(['/movies']);
     } else {
       this.deleted = true;

@@ -8,8 +8,7 @@ import { ApiService } from '../others/api.service';
   styleUrls: ['./account-details.component.css'],
 })
 export class AccountDetailsComponent implements OnInit {
-  session_details: any = JSON.parse(localStorage.getItem('session_details')!);
-  session_id: any = this.session_details.session_id;
+  session_id: any = localStorage.getItem('session_id');
   avatar: any;
   username: any;
   user_id: any;
@@ -28,7 +27,7 @@ export class AccountDetailsComponent implements OnInit {
         this.avatar = `https://secure.gravatar.com/avatar/${res.avatar.gravatar.hash}.jpg?s=200`;
       }
       this.username = res.username;
-      this.user_id = res.id;
+      localStorage.setItem('account_id', res.id);
     });
   }
 }

@@ -17,10 +17,10 @@ export class MovieDetailsComponent implements OnInit {
   maxCredits: any = 10;
   videos: any = [];
   images: any = [];
-  // favourite: any = false;
-  // watchlist: any = false;
-  // session_details: any = JSON.parse(localStorage.getItem('session_details')!);
-  // session_id: any = this.session_details.session_id;
+  favourite: any = false;
+  watchlist: any = false;
+  session_id: any = localStorage.getItem('session_id');
+  account_id: any = localStorage.getItem('account_id');
 
   constructor(
     public route: ActivatedRoute,
@@ -132,11 +132,79 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  // favourite_() {
-  //   this.favourite = !this.favourite;
-  // }
+  favourite_() {
+    if ((this.favourite = !this.favourite)) {
+      this.route.queryParams.subscribe((res: any) => {
+        this.id = res.id;
+        if (res.video === 'false') {
+          this.movieData();
+          console.log(this.data);
+          this.api
+            .add_favourite(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'movie',
 
-  // watchlist_() {
-  //   this.watchlist = !this.watchlist;
-  // }
+              true
+            )
+            .subscribe((res: any) => {
+              console.log(res);
+            });
+        } else {
+          this.tvData();
+          console.log(this.data);
+          this.api
+            .add_favourite(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'tv',
+              true
+            )
+            .subscribe((res: any) => {
+              console.log(res);
+            });
+        }
+      });
+    }
+  }
+
+  watchlist_() {
+    if ((this.watchlist = !this.watchlist)) {
+      this.route.queryParams.subscribe((res: any) => {
+        this.id = res.id;
+        if (res.video === 'false') {
+          this.movieData();
+          console.log(this.data);
+          this.api
+            .add_watchlist(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'movie',
+
+              true
+            )
+            .subscribe((res: any) => {
+              console.log(res);
+            });
+        } else {
+          this.tvData();
+          console.log(this.data);
+          this.api
+            .add_watchlist(
+              this.account_id,
+              this.session_id,
+              this.data.id,
+              'tv',
+              true
+            )
+            .subscribe((res: any) => {
+              console.log(res);
+            });
+        }
+      });
+    }
+  }
 }

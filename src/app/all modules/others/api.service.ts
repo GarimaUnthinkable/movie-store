@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -235,6 +235,33 @@ export class ApiService {
   tv_watchlist(session: any) {
     return this.http.get(
       `https://api.themoviedb.org/3/account/%7Baccount_id%7D/watchlist/tv?api_key=dc36a9d24ba49049b50da08301e79784&language=en-US&session_id=${session}&sort_by=created_at.asc&page=1`
+    );
+  }
+
+  add_favourite(
+    account: any,
+    session: any,
+    media_id: any,
+    media_type: any,
+    favorite: any
+  ) {
+    return this.http.post(
+      `
+    https://api.themoviedb.org/3/account/${account}/favorite?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`,
+      { media_id, media_type, favorite }
+    );
+  }
+
+  add_watchlist(
+    account: any,
+    session: any,
+    media_id: any,
+    media_type: any,
+    watchlist: any
+  ) {
+    return this.http.post(
+      `https://api.themoviedb.org/3/account/${account}/watchlist?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`,
+      { media_id, media_type, watchlist }
     );
   }
 }

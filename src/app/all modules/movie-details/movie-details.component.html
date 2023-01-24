@@ -58,26 +58,28 @@
                 >
                 {{ data.popularity }}
               </h4>
-              <!-- <div class="row">
-                <div class="col-sm-6">
-                  <mat-icon *ngIf="session_id != null">
-                    <button
-                      mat-raised-button
-                      (click)="favourite_()"
-                      style="width: 50px"
-                    >
-                      {{ favourite ? "favorite" : "favorite_border" }}
-                    </button>
-                  </mat-icon>
+              <div *ngIf="session_id != null">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <mat-icon>
+                      <button
+                        mat-raised-button
+                        style="width: 50px"
+                        (click)="favourite_()"
+                      >
+                        {{ favourite ? "favorite" : "favorite_border" }}
+                      </button>
+                    </mat-icon>
+                  </div>
+                  <div class="col-sm-6">
+                    <mat-icon>
+                      <button mat-raised-button (click)="watchlist_()">
+                        {{ watchlist ? "turned_in" : "bookmark_border" }}
+                      </button>
+                    </mat-icon>
+                  </div>
                 </div>
-                <div class="col-sm-6">
-                  <mat-icon *ngIf="session_id != null">
-                    <button mat-raised-button (click)="watchlist_()">
-                      {{ watchlist ? "turned_in" : "bookmark_border" }}
-                    </button>
-                  </mat-icon>
-                </div>
-              </div> -->
+              </div>
             </div>
             <h6 class="card-text" style="opacity: 0.7">
               <i>{{ data.tagline }}</i>

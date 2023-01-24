@@ -8,8 +8,7 @@ import { ApiService } from 'src/app/all modules/others/api.service';
   styleUrls: ['./favourite-movies.component.css'],
 })
 export class FavouriteMoviesComponent implements OnInit {
-  session_details: any = JSON.parse(localStorage.getItem('session_details')!);
-  session_id: any = this.session_details.session_id;
+  session_id: any = localStorage.getItem('session_id');
   movies: any = [];
 
   constructor(

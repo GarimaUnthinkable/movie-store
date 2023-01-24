@@ -8,8 +8,7 @@ import { ApiService } from 'src/app/all modules/others/api.service';
   styleUrls: ['./favourite-shows.component.css'],
 })
 export class FavouriteShowsComponent implements OnInit {
-  session_details: any = JSON.parse(localStorage.getItem('session_details')!);
-  session_id: any = this.session_details.session_id;
+  session_id: any = localStorage.getItem('session_id');
   shows: any = [];
 
   constructor(
