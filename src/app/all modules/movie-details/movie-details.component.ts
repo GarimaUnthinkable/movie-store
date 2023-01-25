@@ -18,7 +18,9 @@ export class MovieDetailsComponent implements OnInit {
   videos: any = [];
   images: any = [];
   favourite: any = false;
+  favourites: any;
   watchlist: any = false;
+  watchlists: any;
   session_id: any = localStorage.getItem('session_id');
   account_id: any = localStorage.getItem('account_id');
 
@@ -31,6 +33,8 @@ export class MovieDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();
+    this.watch_list();
+    this.favourite_list();
   }
 
   getData() {
@@ -51,6 +55,8 @@ export class MovieDetailsComponent implements OnInit {
   movieData() {
     this.api.getMovie(this.id).subscribe((movie: any) => {
       this.data = movie;
+      console.log(this.data);
+
       if (movie.videos.results.length > 0) {
         this.trailer = movie.videos.results;
         this.video = this.trailer.find((item: any) => item.type === 'Trailer');
@@ -61,6 +67,8 @@ export class MovieDetailsComponent implements OnInit {
   tvData() {
     this.api.getTv(this.id).subscribe((tv: any) => {
       this.data = tv;
+      console.log(this.data);
+
       if (tv.videos.results.length > 0) {
         this.trailer = tv.videos.results;
         this.video = this.trailer.find((item: any) => item.type === 'Trailer');
@@ -129,6 +137,64 @@ export class MovieDetailsComponent implements OnInit {
   getPeopleDetails(id: any) {
     this.router.navigate(['/people-details'], {
       queryParams: { id: id },
+    });
+  }
+
+  favourite_list() {
+    this.route.queryParams.subscribe((res: any) => {
+      this.id = res.id;
+      if (res.video === 'false') {
+        this.api.favourite_movies(this.session_id).subscribe((res: any) => {
+          this.favourites = res.results;
+          let movie = this.favourites.filter((item: any) => item.id == this.id);
+          this.movieData();
+          if (this.data.id === movie[0].id) {
+            this.favourite = !this.favourite;
+          } else {
+            this.favourite;
+          }
+        });
+      } else {
+        this.api.favourite_shows(this.session_id).subscribe((res: any) => {
+          this.favourites = res.results;
+          let show = this.favourites.filter((item: any) => item.id == this.id);
+          this.movieData();
+          if (this.data.id === show[0].id) {
+            this.favourite = !this.favourite;
+          } else {
+            this.favourite;
+          }
+        });
+      }
+    });
+  }
+
+  watch_list() {
+    this.route.queryParams.subscribe((res: any) => {
+      this.id = res.id;
+      if (res.video === 'false') {
+        this.api.movie_watchlist(this.session_id).subscribe((res: any) => {
+          this.watchlists = res.results;
+          let movie = this.watchlists.filter((item: any) => item.id == this.id);
+          this.movieData();
+          if (this.data.id === movie[0].id) {
+            this.watchlist = !this.watchlist;
+          } else {
+            this.watchlist;
+          }
+        });
+      } else {
+        this.api.tv_watchlist(this.session_id).subscribe((res: any) => {
+          this.watchlists = res.results;
+          let show = this.watchlists.filter((item: any) => item.id == this.id);
+          this.movieData();
+          if (this.data.id === show[0].id) {
+            this.watchlist = !this.watchlist;
+          } else {
+            this.watchlist;
+          }
+        });
+      }
     });
   }
 

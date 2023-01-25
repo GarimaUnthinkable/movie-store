@@ -1,1 +1,75 @@
-<p>list-info works!</p>
+<nav
+  style="
+    height: 210px;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210204/pngtree-abstract-background-technology-of-data-applications-image_555017.jpg');
+  "
+>
+  <div>
+    <span style="margin: 20px; color: rgb(255, 255, 255); font-size: 40px">
+      <b>List name</b>
+    </span>
+  </div>
+  <div>
+    <img
+      src="..."
+      alt="avatar"
+      style="width: 50px; height: 50px; border-radius: 200px; margin: 20px"
+    />
+    <span style="margin: 5px; color: white; font-size: 20px">
+      <b>A list by</b>
+      <a
+        routerLink="/account-details"
+        style="color: white; text-decoration: none; margin-left: 3px"
+        >Username</a
+      >
+    </span>
+    <p style="margin: 5px; color: white; font-size: 20px">
+      <b>About this list</b><br />
+      <a
+        routerLink="/account-details"
+        style="color: white; text-decoration: none; margin-left: 3px"
+        >List description</a
+      >
+      <button
+        mat-raised-button
+        style="
+          margin-left: 150px;
+          background-color: rgb(255, 255, 255);
+          color: rgb(121, 210, 213);
+          border-radius: 5px;
+        "
+      >
+        <b>Edit</b>
+      </button>
+      <button
+        mat-raised-button
+        style="
+          margin-left: 10px;
+          background-color: rgb(255, 255, 255);
+          color: rgb(121, 210, 213);
+          border-radius: 5px;
+        "
+        routerLink="/new-list"
+      >
+        <b>New list</b>
+      </button>
+      <button
+        mat-raised-button
+        style="
+          margin-left: 10px;
+          background-color: rgb(255, 255, 255);
+          color: rgb(121, 210, 213);
+          border-radius: 5px;
+        "
+      >
+        <b>Add item</b>
+      </button>
+    </p>
+  </div>
+</nav>
+<div class="card" style="width: 12rem; margin: 30px; border-radius: 10px">
+  <img class="card-img-top" src="..." alt="item poster" />
+  <div class="card-body">
+    <p class="card-text">Item name and item number</p>
+  </div>
+</div>

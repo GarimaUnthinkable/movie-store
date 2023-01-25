@@ -275,4 +275,10 @@ export class ApiService {
       }
     );
   }
+
+  list_details(id: any) {
+    return this.http.get(
+      `https://api.themoviedb.org/3/list/${id}?api_key=dc36a9d24ba49049b50da08301e79784&language=en-US`
+    );
+  }
 }

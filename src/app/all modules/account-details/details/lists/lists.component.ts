@@ -24,9 +24,9 @@ export class ListsComponent implements OnInit {
     });
   }
 
-  getDetails(details: any) {
+  getDetails(id: any) {
     this.router.navigate(['/list-info'], {
-      queryParams: { list: details },
+      queryParams: { list_id: id },
     });
   }
 }
