@@ -282,10 +282,33 @@ export class ApiService {
     );
   }
 
+  // list_item_status(list_id: any, movie_id: any) {
+  //   return this.http.get(`https://api.themoviedb.org/3/list/${list_id}/item_status?api_key=dc36a9d24ba49049b50da08301e79784&movie_id=${movie_id}`)
+  // }
+
   add_list_item(session: any, list_id: any, media_id: any) {
     return this.http.post(
       `https://api.themoviedb.org/3/list/${list_id}/add_item?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`,
       { media_id }
     );
+  }
+
+  remove_list_item(session: any, list_id: any, media_id: any) {
+    return this.http.post(
+      `https://api.themoviedb.org/3/list/${list_id}/remove_item?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`,
+      { media_id }
+    );
+  }
+
+  clear_list(session: any, list_id: any, confirm: any) {
+    return this.http.post(
+      `https://api.themoviedb.org/3/list/${list_id}/clear?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}&confirm=true`,
+      { confirm }
+    );
+  }
+
+  delete_list(session: any, list_id: any) {
+    return this.http.delete(`
+    https://api.themoviedb.org/3/list/${list_id}?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`);
   }
 }

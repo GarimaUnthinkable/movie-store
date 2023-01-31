@@ -60,18 +60,14 @@
               </h4>
               <div *ngIf="session_id != null">
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-2">
                     <mat-icon>
-                      <button
-                        mat-raised-button
-                        style="width: 50px"
-                        (click)="favourite_()"
-                      >
+                      <button mat-raised-button (click)="favourite_()">
                         {{ favourite ? "favorite" : "favorite_border" }}
                       </button>
                     </mat-icon>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-2">
                     <mat-icon>
                       <button mat-raised-button (click)="watchlist_()">
                         {{ watchlist ? "turned_in" : "bookmark_border" }}

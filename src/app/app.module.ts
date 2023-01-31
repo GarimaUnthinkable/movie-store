@@ -31,7 +31,6 @@ import { TvRatingsComponent } from './all modules/account-details/details/tv-rat
 import { MovieWatchComponent } from './all modules/account-details/details/movie-watch/movie-watch.component';
 import { TvWatchComponent } from './all modules/account-details/details/tv-watch/tv-watch.component';
 import { NewListComponent } from './all modules/new-list/new-list.component';
-import { ListInfoComponent } from './all modules/list-info/list-info.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +58,6 @@ import { ListInfoComponent } from './all modules/list-info/list-info.component';
     MovieWatchComponent,
     TvWatchComponent,
     NewListComponent,
-    ListInfoComponent,
   ],
   imports: [
     BrowserModule,
