@@ -281,4 +281,11 @@ export class ApiService {
       `https://api.themoviedb.org/3/list/${id}?api_key=dc36a9d24ba49049b50da08301e79784&language=en-US`
     );
   }
+
+  add_list_item(session: any, list_id: any, media_id: any) {
+    return this.http.post(
+      `https://api.themoviedb.org/3/list/${list_id}/add_item?api_key=dc36a9d24ba49049b50da08301e79784&session_id=${session}`,
+      { media_id }
+    );
+  }
 }
